@@ -9,6 +9,7 @@ use Bling\Repositories\NFCeRepository;
 use Bling\Repositories\NFeRepository;
 use Bling\Repositories\OrderRepository;
 use Bling\Repositories\ProductRepository;
+use Bling\Repositories\ContractsRepository;
 use Bling\Repositories\NFSeRepository;
 
 class Bling {
@@ -36,6 +37,11 @@ class Bling {
     public function products(): ProductRepository
     {
         return new ProductRepository($this->client);
+    }
+
+    public function contracts(): ContractsRepository
+    {
+        return new ContractsRepository($this->client);
     }
 
     public function orders(): OrderRepository

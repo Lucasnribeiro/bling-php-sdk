@@ -16,7 +16,7 @@ abstract class TestCase extends BaseTestCase
     public function setUp(): void
     {
         $dotenv = new Dotenv();
-        $dotenv->load(__DIR__ . '/../.env');
+        $dotenv->load(__DIR__ . '\..\.env');
 
         $this->bling = new Bling($_ENV['BLING_API_KEY']);
     }

@@ -5,8 +5,8 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Juciano Araujo",
-			"email": "jucianoaraujo@rits.com.br"
+			"name": "Lucas Ribeiro",
+			"email": "lucasmnribeiro@gmail.com"
 		}
 	],
 	"autoload": {
@@ -20,7 +20,7 @@
 		}
 	},
 	"require": {
-		"guzzlehttp/guzzle": "^6.5",
+		"guzzlehttp/guzzle": "^7.0.1",
 		"spatie/array-to-xml": "^2.11"
 	},
 	"require-dev": {
