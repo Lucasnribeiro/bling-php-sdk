@@ -21,19 +21,11 @@ class ContactsRepository extends BaseRepository
         return $this->client->get('contatos/json/', $options);
     }
 
-    public function find(array $filters = [], string $id): ?array
+    public function find(string $id, int $tipo): ?array
     {
-        $options = [];
 
-        foreach ($filters as $k => $v) {
-            $filters[$k] = $k.'['.$v.']';
-        }
-
-        if(count($filters)) {
-            $options['filters'] = implode('; ', $filters);
-        }
-
-        return $this->client->get("contato/$id/json/", $options);
+        return $this->client->get("contato/$id/json/", ['identificador' => $tipo] );
+        
     }
 
     public function create(array $params): ?array
