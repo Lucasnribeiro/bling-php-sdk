@@ -12,8 +12,8 @@ use Bling\Repositories\ProductRepository;
 use Bling\Repositories\ContractsRepository;
 use Bling\Repositories\ContactsRepository;
 use Bling\Repositories\NFSeRepository;
-use Bling\Repositories\InvoicesToReceive;
-use Bling\Repositories\InvoicesToPay;
+use Bling\Repositories\InvoicesToReceiveRepository;
+use Bling\Repositories\InvoicesToPayRepository;
 
 class Bling {
 
@@ -77,13 +77,13 @@ class Bling {
         return new NFSeRepository($this->client);
     }
 
-    public function invoicestoreceive(): InvoicesToReceive
+    public function invoicestoreceive(): InvoicesToReceiveRepository
     {
-        return new InvoicesToReceive($this->client);
+        return new InvoicesToReceiveRepository($this->client);
     }
 
-    public function invoicestopay(): InvoicesToPay
+    public function invoicestopay(): InvoicesToPayRepository
     {
-        return new InvoicesToPay($this->client);
+        return new InvoicesToPayRepository($this->client);
     }
 }

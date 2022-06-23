@@ -2,6 +2,7 @@
 
 namespace Bling\API;
 
+use Exception;
 use GuzzleHttp\Client as GuzzleClient;
 
 class Client
@@ -43,8 +44,15 @@ class Client
             $options['form_params'] = array_merge(['apikey' => $this->apiKey], $options);
         }
 
-        $response = $this->client->request($method, $uri, $options);
-
+        usleep(500000);
+        
+        try{
+            $response = $this->client->request($method, $uri, $options);
+        }catch(Exception $e){
+            usleep(500000);
+            $response = $this->client->request($method, $uri, $options);
+        }
+        
         $jsonResponse = json_decode($response->getBody(), true);
         if (empty($jsonResponse)) {
             return [];
